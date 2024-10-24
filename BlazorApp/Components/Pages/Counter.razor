@@ -1,0 +1,27 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status" style="color:@(currentCount >= 1 && currentCount <= 5 ? "red" : "black")">
+    Current count: @currentCount
+</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">加算</button>
+<button class="btn btn-primary" @onclick="DecrementCount">減算</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount--;
+    }
+}
