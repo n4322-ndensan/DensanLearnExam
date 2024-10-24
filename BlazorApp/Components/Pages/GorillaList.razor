@@ -1,0 +1,35 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<h3>タスク一覧</h3>
+
+<div>
+    <button class="btn btn-secondary" @onclick="NavigateToAddGorilla">追加</button>
+</div>
+
+<div>
+    <RadzenDataGrid TItem="BlazorApp.Models.Gorilla" Data="@gorillaList" LoadData="@LoadGorilla">
+        <Columns>
+            <RadzenDataGridColumn Title="題名">
+                <Template Context="gorilla">
+                    @gorilla.Title
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="期限">
+                <Template Context="gorilla">
+                    @gorilla.Kigen
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="状態">
+                <Template Context="gorilla">
+                    @gorilla.Status
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="内容">
+                <Template Context="gorilla">
+                    @gorilla.Naiyo
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+</div>
