@@ -4,30 +4,30 @@
 <h3>タスク一覧</h3>
 
 <div>
-    <button class="btn btn-secondary" @onclick="NavigateToAddGorilla">追加</button>
+    <RadzenButton class="btn btn-secondary" Click="NavigateToAddTasuku">追加</RadzenButton>
 </div>
 
 <div>
-    <RadzenDataGrid TItem="BlazorApp.Models.Gorilla" Data="@gorillaList" LoadData="@LoadGorilla">
+     <RadzenDataGrid TItem="BlazorApp.Models.Tasuku" Data="@tasukuList" LoadData="@LoadTasuku">
         <Columns>
             <RadzenDataGridColumn Title="題名">
-                <Template Context="gorilla">
-                    @gorilla.Title
+                <Template Context="tasuku">
+                    @tasuku.Title
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Title="期限">
-                <Template Context="gorilla">
-                    @gorilla.Kigen
+                <Template Context="tasuku">
+                    @tasuku.Kigen
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Title="状態">
-                <Template Context="gorilla">
-                    @gorilla.Status
+                <Template Context="tasuku">
+                    @tasuku.Status
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Title="内容">
-                <Template Context="gorilla">
-                    @gorilla.Naiyo
+                <Template Context="tasuku">
+                    @tasuku.Naiyo
                 </Template>
             </RadzenDataGridColumn>
         </Columns>

@@ -7,31 +7,31 @@ using System.Threading.Tasks;
 
 namespace BlazorApp.Components.Pages
 {
-    public partial class GorillaList
+    public partial class TasukuList
     {
-        private List<BlazorApp.Models.Gorilla> gorillaList = new List<BlazorApp.Models.Gorilla>();
+        private List<BlazorApp.Models.Tasuku> tasukuList = new List<BlazorApp.Models.Tasuku>();
 
         protected override void OnInitialized()
         {
-            LoadGorillas();
+            Loadtasuku();
         }
 
-        private async Task LoadGorilla(LoadDataArgs args)
+        private async Task LoadTasuku(LoadDataArgs args)
         {
             await Task.Yield();
-            LoadGorillas();
+            Loadtasuku();
         }
 
-        private void LoadGorillas()
+        private void Loadtasuku()
         {
-            gorillaList = GorillaService.GetGorillas()
+            tasukuList = TasukuService.GetTasuku()
                 .OrderBy(g => g)
                 .ToList();
         }
 
-        private void NavigateToAddGorilla()
+        private void NavigateToAddTasuku()
         {
-            Navigation.NavigateTo("/TaskToroku");
+            Navigation.NavigateTo("/TasukuToroku");
         }
     }
 }

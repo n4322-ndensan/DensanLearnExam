@@ -1,6 +1,6 @@
 ﻿namespace BlazorApp.Entities;
 
-public class Gorilla(string title, DateOnly kigen, int status, string naiyo)
+public class Tasuku(string title, DateOnly kigen, int status, string naiyo)
 {
     public string Title { get; } = title;
     public DateOnly Kigen { get; } = kigen;

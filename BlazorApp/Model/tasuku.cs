@@ -1,15 +1,21 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorApp.Models
 {
-    public class Gorilla : IComparable<Gorilla>
+    public class Tasuku : IComparable<Tasuku>
     {
+        [Required(ErrorMessage = "題名は必須です。")]
         public string Title { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "期限は必須です。")]
         public DateOnly Kigen { get; set; }
+
+        [Required(ErrorMessage = "状態は必須です。")]
         public int Status { get; set; }
         public string Naiyo { get; set; } = string.Empty;
 
-        public int CompareTo(Gorilla? other)
+        public int CompareTo(Tasuku? other)
         {
             if (other == null) return 1;
 

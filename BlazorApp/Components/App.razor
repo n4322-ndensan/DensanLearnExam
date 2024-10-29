@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="BlazorApp.styles.css" />
-
     @*Radzenコンポーネント用のCSS参照*@
     <link href="_content/Radzen.Blazor/css/humanistic-base.css" rel="stylesheet" />
     @*ここまで*@
-
     <link rel="icon" type="image/png" href="favicon.png" />
     <HeadOutlet @rendermode="InteractiveServer" />
 </head>
@@ -20,10 +18,6 @@
 <body>
     <Routes @rendermode="InteractiveServer" />
     <script src="_framework/blazor.web.js"></script>
-
-    @*Radzenコンポーネント用のJavascript参照*@
-    <script src="_content/RadzenBlazor/Radzen.Blazor.js?V=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
-    @*ここまで*@
 </body>
 
 </html>
