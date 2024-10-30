@@ -18,6 +18,10 @@
 <body>
     <Routes @rendermode="InteractiveServer" />
     <script src="_framework/blazor.web.js"></script>
+
+    @*Radzenコンポーネント用のJavascript参照*@
+    <script src="_content/RadzenBlazor/Radzen.Blazor.js?V=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
+    @*ここまで*@
 </body>
 
 </html>

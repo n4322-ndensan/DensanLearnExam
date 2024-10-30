@@ -8,7 +8,7 @@
 </div>
 
 <div>
-     <RadzenDataGrid TItem="BlazorApp.Models.Tasuku" Data="@tasukuList" LoadData="@LoadTasuku">
+    <RadzenDataGrid TItem="BlazorApp.Models.Tasuku" Data="@tasukuList" LoadData="@LoadTasuku">
         <Columns>
             <RadzenDataGridColumn Title="題名">
                 <Template Context="tasuku">
@@ -22,7 +22,7 @@
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Title="状態">
                 <Template Context="tasuku">
-                    @tasuku.Status
+                    @StatusCodeToName(tasuku.Status)
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Title="内容">

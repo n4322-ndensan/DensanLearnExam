@@ -1,10 +1,11 @@
 ﻿using BlazorApp.Services;
+using BlazorApp.Models;
 
 namespace BlazorApp.Components.Pages
 {
     public partial class TasukuToroku
     {
-        private BlazorApp.Models.Tasuku tasuku = new BlazorApp.Models.Tasuku
+        private Tasuku tasuku = new Tasuku
         {
             Kigen = DateOnly.FromDateTime(DateTime.Now)
         };
