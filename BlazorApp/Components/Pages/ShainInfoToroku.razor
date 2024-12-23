@@ -1,0 +1,42 @@
+﻿@page "/ShainInfoToroku"
+@inject NavigationManager Navigation
+@using BlazorApp.Models
+@using BlazorApp.Services
+@using System.ComponentModel.DataAnnotations
+
+<h3>社員登録</h3>
+
+<EditForm Model="@shaininfo" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="shainname">氏名</label>
+        <InputText id="shainname" class="form-control" @bind-Value="shaininfo.ShainName" />
+        <ValidationMessage For="@(() => shaininfo.ShainName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="nyushabi">入社日</label>
+        <InputDate id="nyushabi" class="form-control" @bind-Value="shaininfo.Nyushabi" />
+        <ValidationMessage For="@(() => shaininfo.Nyushabi)" />
+    </div>
+
+    <div class="form-group">
+        <label for="status">雇用形態</label>
+        <InputSelect id="status" class="form-control" @bind-Value="shaininfo.Status">
+            <option value="0">正社員</option>
+            <option value="1">嘱託</option>
+            <option value="3">協力会社</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => shaininfo.Status)" />
+    </div>
+
+    <div class="form-group">
+        <label for="biko">備考</label>
+        <InputTextArea id="biko" class="form-control" @bind-Value="shaininfo.Biko" />
+    </div>
+
+    <RadzenButton type="submit" class="btn btn-primary">登録</RadzenButton>
+    <RadzenButton type="button" class="btn btn-secondary" Click="Cancel">Cancel</RadzenButton>
+</EditForm>

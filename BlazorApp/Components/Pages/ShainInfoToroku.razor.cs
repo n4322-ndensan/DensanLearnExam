@@ -3,16 +3,16 @@ using BlazorApp.Models;
 
 namespace BlazorApp.Components.Pages
 {
-    public partial class TasukuToroku
+    public partial class ShainInfoToroku
     {
-        private Tasuku tasuku = new Tasuku
+        private ShainInfo shaininfo = new ShainInfo
         {
-            Kigen = DateOnly.FromDateTime(DateTime.Now)
+            Nyushabi = DateOnly.FromDateTime(DateTime.Now)
         };
 
         private void HandleValidSubmit()
         {
-            TasukuService.AddTasuku(tasuku);
+            ShainInfoService.AddShainInfo(shaininfo);
             Navigation.NavigateTo("/");
         }
 

@@ -1,0 +1,35 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<h3>社員一覧</h3>
+
+<div>
+    <RadzenButton class="btn btn-secondary" Click="NavigateToAddShainInfo">追加</RadzenButton>
+</div>
+
+<div>
+    <RadzenDataGrid TItem="BlazorApp.Models.ShainInfo" Data="@shaininfoList" LoadData="@LoadShainInfo">
+        <Columns>
+            <RadzenDataGridColumn Title="氏名">
+                <Template Context="shaininfo">
+                    @shaininfo.ShainName
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="入社日">
+                <Template Context="shaininfo">
+                    @shaininfo.Nyushabi
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="雇用形態">
+                <Template Context="shaininfo">
+                    @StatusCodeToName(shaininfo.Status)
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Title="備考">
+                <Template Context="shaininfo">
+                    @shaininfo.BikoFirstLine
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+</div>
